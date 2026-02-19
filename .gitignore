@@ -1,6 +1,8 @@
 .env
-__pycache__/
 venv/
 .streamlit/
 chroma_db/
 *.pdf
+processed_chunks.json
+server/policy_db/
+server/services/__pycache__/
