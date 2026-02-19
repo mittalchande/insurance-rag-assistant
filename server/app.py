@@ -1,7 +1,7 @@
 import streamlit as st
 from services.assistant import ask_policy
 
-st.set_page_config(page_title="Manulife Travel Insurance Assistant", page_icon=":airplane:", layout="centered")
+st.set_page_config(page_title="Manulife Travel Insurance Assistant", page_icon=":airplane:", layout="wide")
 st.title("Manulife Travel Insurance Assistant")
 
 

@@ -59,11 +59,7 @@ def extract_text_to_chunks(file_path,filename):
                         cleaned_row = [str(item).replace('\n', ' ').strip() if item else "" for item in row]
                         table_markdown += f"| {' | '.join(cleaned_row)} |\n"
             
-            
-            
-            # Combine them: prioritize the table structure if it exists
             # 3. STITCH: Combine into one single flow of text
-            # We add the Page Title/Header so every chunk knows what document this is
             page_context = f"Page {i+1} - {filename}\n"
             full_content_for_chunking = f"{page_context}\n{cleaned_raw_text}\n\n### DATA TABLE:\n{table_markdown}"
             
