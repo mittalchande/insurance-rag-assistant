@@ -1,6 +1,6 @@
 # Manulife Travel Insurance AI Assistant 
 
-![Manulife Travel Insurance AI Assistant](./demo.png)
+![Manulife Travel Insurance AI Assistant](./Demo.png)
 
 A Retrieval-Augmented Generation (RAG) system that answers questions about Manulife Travel Insurance plans by extracting and reasoning over dense comparison tables from a PDF policy document.
 
@@ -313,4 +313,5 @@ python evaluator.py
 ## Source Document
 
 [Manulife Travel Insurance Comparison Charts](https://www.manulife.ca/content/dam/consumer-portal/documents/en/travel/travelling-canadians-comparison-charte.pdf))
+
 
