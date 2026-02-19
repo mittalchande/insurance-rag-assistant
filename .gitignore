@@ -6,3 +6,4 @@ chroma_db/
 processed_chunks.json
 server/policy_db/
 server/services/__pycache__/
+server/__pycache__/

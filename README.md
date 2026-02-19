@@ -12,7 +12,7 @@ Insurance comparison tables are notoriously difficult for standard AI tools to r
 
 ## How It Works
 
-### 1. PDF Ingestion (`pdf_processor.py`)
+### 1. PDF Ingestion (`ingestion.py`)
 
 Uses `pdfplumber` instead of general-purpose PDF libraries because it reads actual table cell boundaries rather than flattening text linearly. This correctly preserves multi-line cells like:
 
@@ -23,6 +23,7 @@ Trip duration | Age 0-59: 365 days
 ```
 
 Each page produces two outputs:
+
 - **Raw prose text** — for semantic retrieval
 - **Markdown table** — for column-aware answer generation
 
@@ -80,12 +81,12 @@ graph LR
 
 Tested against a 4-tier benchmark using LLM-as-judge:
 
-| Test | Question | Result |
-|------|----------|--------|
-| Easy | What is the emergency dental limit for TravelEase? | ✅ PASS |
-| Medium | Which all-inclusive plan can a 77 year old buy for 45 days? | ✅ PASS |
-| Hard | Which plans cover hospital allowance? | ❌ FAIL (judge error) |
-| Trap | How do I file a claim? | ✅ PASS |
+| Test   | Question                                                    | Result                |
+| ------ | ----------------------------------------------------------- | --------------------- |
+| Easy   | What is the emergency dental limit for TravelEase?          | ✅ PASS               |
+| Medium | Which all-inclusive plan can a 77 year old buy for 45 days? | ✅ PASS               |
+| Hard   | Which plans cover hospital allowance?                       | ❌ FAIL (judge error) |
+| Trap   | How do I file a claim?                                      | ✅ PASS               |
 
 **Score: 75% (3/4)**
 
@@ -103,20 +104,21 @@ The Hard test failure is a judge limitation, not a RAG failure — the actual an
 
 ## Tech Stack
 
-| Component | Technology |
-|-----------|------------|
-| PDF Parsing | pdfplumber |
-| Embeddings | OpenAI text-embedding-3-small |
-| Vector Store | ChromaDB |
-| LLM | OpenAI GPT-4o-mini |
-| Frontend | Streamlit |
-| Language | Python 3.11 |
+| Component    | Technology                    |
+| ------------ | ----------------------------- |
+| PDF Parsing  | pdfplumber                    |
+| Embeddings   | OpenAI text-embedding-3-small |
+| Vector Store | ChromaDB                      |
+| LLM          | OpenAI GPT-4o-mini            |
+| Frontend     | Streamlit                     |
+| Language     | Python 3.11                   |
 
 ---
 
 ## Setup
 
 **1. Clone and install dependencies:**
+
 ```bash
 git clone https://github.com/mittalchande/insurance-rag-assistant.git
 cd insurance-rag-assistant
@@ -124,21 +126,25 @@ pip install -r requirements.txt
 ```
 
 **2. Create a `.env` file:**
+
 ```
 OPENAI_API_KEY=your_key_here
 ```
 
 **3. Run ingestion to process the PDF:**
+
 ```bash
 python ingestion.py
 ```
 
 **4. Start the assistant:**
+
 ```bash
 streamlit run app.py
 ```
 
 **5. Run the evaluation benchmark:**
+
 ```bash
 python evaluator.py
 ```
@@ -161,7 +167,7 @@ Insurance comparison tables are notoriously difficult for standard AI tools to r
 
 ## How It Works
 
-### 1. PDF Ingestion (`pdf_processor.py`)
+### 1. PDF Ingestion (`ingestion.py`)
 
 Uses `pdfplumber` instead of general-purpose PDF libraries because it reads actual table cell boundaries rather than flattening text linearly. This correctly preserves multi-line cells like:
 
@@ -172,6 +178,7 @@ Trip duration | Age 0-59: 365 days
 ```
 
 Each page produces two outputs:
+
 - **Raw prose text** — for semantic retrieval
 - **Markdown table** — for column-aware answer generation
 
@@ -229,12 +236,12 @@ graph LR
 
 Tested against a 4-tier benchmark using LLM-as-judge:
 
-| Test | Question | Result |
-|------|----------|--------|
-| Easy | What is the emergency dental limit for TravelEase? | ✅ PASS |
-| Medium | Which all-inclusive plan can a 77 year old buy for 45 days? | ✅ PASS |
-| Hard | Which plans cover hospital allowance? | ❌ FAIL (judge error) |
-| Trap | How do I file a claim? | ✅ PASS |
+| Test   | Question                                                    | Result                |
+| ------ | ----------------------------------------------------------- | --------------------- |
+| Easy   | What is the emergency dental limit for TravelEase?          | ✅ PASS               |
+| Medium | Which all-inclusive plan can a 77 year old buy for 45 days? | ✅ PASS               |
+| Hard   | Which plans cover hospital allowance?                       | ❌ FAIL (judge error) |
+| Trap   | How do I file a claim?                                      | ✅ PASS               |
 
 **Score: 75% (3/4)**
 
@@ -252,20 +259,21 @@ The Hard test failure is a judge limitation, not a RAG failure — the actual an
 
 ## Tech Stack
 
-| Component | Technology |
-|-----------|------------|
-| PDF Parsing | pdfplumber |
-| Embeddings | OpenAI text-embedding-3-small |
-| Vector Store | ChromaDB |
-| LLM | OpenAI GPT-4o-mini |
-| Frontend | Streamlit |
-| Language | Python 3.11 |
+| Component    | Technology                    |
+| ------------ | ----------------------------- |
+| PDF Parsing  | pdfplumber                    |
+| Embeddings   | OpenAI text-embedding-3-small |
+| Vector Store | ChromaDB                      |
+| LLM          | OpenAI GPT-4o-mini            |
+| Frontend     | Streamlit                     |
+| Language     | Python 3.11                   |
 
 ---
 
 ## Setup
 
 **1. Clone and install dependencies:**
+
 ```bash
 git clone https://github.com/mittalchande/insurance-rag-assistant.git
 cd insurance-rag-assistant
@@ -273,21 +281,25 @@ pip install -r requirements.txt
 ```
 
 **2. Create a `.env` file:**
+
 ```
 OPENAI_API_KEY=your_key_here
 ```
 
 **3. Run ingestion to process the PDF:**
+
 ```bash
-python pdf_processor.py
+python ingestion.py
 ```
 
 **4. Start the assistant:**
+
 ```bash
 streamlit run app.py
 ```
 
 **5. Run the evaluation benchmark:**
+
 ```bash
 python evaluator.py
 ```
