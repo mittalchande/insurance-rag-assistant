@@ -157,6 +157,7 @@ python evaluator.py
 
 ## Source Document
 
-[Manulife Travel Insurance Comparison Charts](# Manulife Travel Insurance AI Assistant
+[Manulife Travel Insurance Comparison Charts](https://www.manulife.ca/content/dam/consumer-portal/documents/en/travel/travelling-canadians-comparison-charte.pdf)
 
 ---
+
