@@ -1,12 +1,16 @@
 # Manulife Travel Insurance AI Assistant 
 
-![Manulife Travel Insurance AI Assistant](./Demo.png)
-
 A Retrieval-Augmented Generation (RAG) system that answers questions about Manulife Travel Insurance plans by extracting and reasoning over dense comparison tables from a PDF policy document.
 
 ---
 
-
+<div align="center">
+  <h3>📺 Project Demo</h3>
+  <a href="https://www.loom.com/share/9f8e8bc3efb44032b7f1359566301014">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/9f8e8bc3efb44032b7f1359566301014-1930f8ea235b4a83-full-play.gif#t=0.1">
+  </a>
+  <p><i>Click the image above to watch the full demo on Loom</i></p>
+</div>
 
 ## The Problem
 
@@ -160,4 +164,5 @@ python evaluator.py
 [Manulife Travel Insurance Comparison Charts](https://www.manulife.ca/content/dam/consumer-portal/documents/en/travel/travelling-canadians-comparison-charte.pdf)
 
 ---
+
 
