@@ -49,6 +49,8 @@ def ask_policy(question):
     "- IMPORTANT: Quarantine is EXCLUDED in Canada, but COVERED internationally (e.g., Mexico) under 'Delayed return'.\n"
     "\nAlways cite page numbers (Page X). If unsure, say you cannot find the info.\n"
     "\nOnly speak from the provided context.If the answer is not explicitly word-for-word in the provided context, you MUST say exactly: 'I'm sorry, I cannot find the specific information in the policy documents.'"
+    "\n### CRITICAL::\n "
+    "- If the user asks about insurance policy administration such as cancelling a policy, getting refunds on premiums, or contacting support — this information is NOT in the document. You MUST say you cannot find it."
     )
 
     user_message = (
